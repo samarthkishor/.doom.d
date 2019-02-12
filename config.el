@@ -35,10 +35,11 @@
 ;; Packages
 
 (def-package! org
+  :hook ((org-mode . visual-line-mode)
+         (org-mode . org-bullets-mode))
   :config
   (setq org-directory "~/Dropbox/org/")
   (setq org-log-done 'time)
-  (add-hook 'org-mode-hook 'visual-line-mode)
 
   (setq org-latex-pdf-process '("xelatex -shell-escape %f" "biber %b" "xelatex -shell-escape %f" "xelatex -shell-escape %f"))
   (setq bibtex-dialect 'biblatex)

@@ -10,6 +10,12 @@
 
 
 ;;
+;; Font Settings
+(when (window-system)
+  (set-frame-font "Fira Code 14" nil t))
+
+
+;;
 ;; MacOS
 
 (when (eq system-type 'darwin)

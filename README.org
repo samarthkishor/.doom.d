@@ -1,6 +1,4 @@
-#+TITLE:   Samarth's Doom Emacs Configuration
-
-* Description
+#+TITLE: Samarth's Doom Emacs Configuration
 
 After fiddling with my own vanilla Emacs configuration for a while, I figured it's probably best to stick with the tried-and-true Doom Emacs distribution for its speed and simplicity.
 

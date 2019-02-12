@@ -1,0 +1,9 @@
+#+TITLE:   Samarth's Doom Emacs Configuration
+
+* Description
+
+After fiddling with my own vanilla Emacs configuration for a while, I figured it's probably best to stick with the tried-and-true Doom Emacs distribution for its speed and simplicity.
+
+This isn't in a literate org-mode format (for now) because I haven't changed enough of the settings to make it worth the hassle.
+
+No idea if my code is idiomatic but it works (for the most part).

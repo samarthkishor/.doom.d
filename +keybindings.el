@@ -103,6 +103,10 @@
      :desc "Switch to 8th workspace"  :n "7"   (λ! (+workspace/switch-to 7))
      :desc "Switch to 9th workspace"  :n "8"   (λ! (+workspace/switch-to 8))))
 
+ ;; evil
+ :desc "Increment number" :n "C-a" #'evil-numbers/inc-at-pt
+ :desc "Decrement number" :n "C-S-a" #'evil-numbers/dec-at-pt
+
  ;; swiper
  :desc "Find in file" :g "C-s" #'swiper
 

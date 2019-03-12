@@ -1,7 +1,5 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
-;; Place your private configuration here
-
 ;;
 ;; Personal Info
 
@@ -10,9 +8,11 @@
 
 
 ;;
-;; Font Settings
-(when (window-system)
-  (set-frame-font "Fira Code 14" nil t))
+;; UI Settings
+
+(setq doom-font (font-spec :family "Fira Code" :size 14))
+(setq doom-big-font (font-spec :family "Fira Code" :size 16))
+(global-visual-line-mode 1)
 
 
 ;;

@@ -34,9 +34,7 @@
 ;;
 ;; Packages
 
-(def-package! org
-  :hook ((org-mode . visual-line-mode)
-         (org-mode . org-bullets-mode))
+(after! org
   :config
   (setq org-directory "~/Dropbox/org/")
   (setq org-log-done 'time)
@@ -52,7 +50,10 @@
                                  (concat org-directory "refile-beorg.org")
                                  (concat org-directory "homework.org"))))
 
-  (set-org-agenda-files))
+  (set-org-agenda-files)
+
+  ;; use sly instead of slime for lisp in org-babel
+  (setq org-babel-lisp-eval-fn "sly-eval"))
 
 
 (def-package! evil-surround

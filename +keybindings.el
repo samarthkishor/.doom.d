@@ -12,7 +12,10 @@
    :desc "Previous Error"         :n  "["   #'flycheck-previous-error
 
    :desc "Find file content"      :n  "f"   #'counsel-projectile-ag
-   :desc "Find project"           :n  "p"   #'projectile-switch-project
+
+   ;; (:desc "projectile" :prefix "p"
+   ;;   :desc "Switch project"       :n  "p"   #'projectile-switch-project
+   ;;   :desc "Find in project"      :n  "f"   #'projectile-switch-project)
 
    :desc "Eval"                   :n  "e"   #'+eval/buffer
    :v    "e"                                #'+eval/region

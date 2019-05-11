@@ -44,16 +44,35 @@
   (add-to-list 'org-latex-packages-alist '("" "minted"))
   (setq org-latex-listings 'minted)
 
-  (defun set-org-agenda-files ()
-    "Set different org-files to be used in org-agenda"
-    (setq org-agenda-files (list (concat org-directory "tasks.org")
-                                 (concat org-directory "refile-beorg.org")
-                                 (concat org-directory "homework.org"))))
+  (setq org-agenda-files (list (concat org-directory "tasks.org")
+                               (concat org-directory "refile-beorg.org")
+                               (concat org-directory "homework.org")))
 
-  (set-org-agenda-files)
 
   ;; use sly instead of slime for lisp in org-babel
   (setq org-babel-lisp-eval-fn "sly-eval"))
+
+(after! tex
+  (add-to-list 'safe-local-variable-values
+               '(TeX-command-extra-options . "-shell-escape")))
+
+(after! python-mode
+  :config
+  (setq python-shell-interpreter "ipython"))
+
+
+(def-package! prettier-js
+  :config
+  (defun enable-minor-mode (my-pair)
+    "Enable minor mode if filename match the regexp.  MY-PAIR is a cons cell (regexp . minor-mode)."
+    (if (buffer-file-name)
+        (if (string-match (car my-pair) buffer-file-name)
+            (funcall (cdr my-pair)))))
+
+  (add-hook 'js2-mode-hook 'prettier-js-mode)
+  (add-hook 'web-mode-hook (lambda ()
+                             (enable-minor-mode
+                              '("\\.jsx?\\'" . prettier-js-mode)))))
 
 
 (def-package! evil-surround

@@ -11,12 +11,6 @@
    :desc "Next Error"             :n  "]"   #'flycheck-next-error
    :desc "Previous Error"         :n  "["   #'flycheck-previous-error
 
-   :desc "Find file content"      :n  "f"   #'counsel-projectile-ag
-
-   ;; (:desc "projectile" :prefix "p"
-   ;;   :desc "Switch project"       :n  "p"   #'projectile-switch-project
-   ;;   :desc "Find in project"      :n  "f"   #'projectile-switch-project)
-
    :desc "Eval"                   :n  "e"   #'+eval/buffer
    :v    "e"                                #'+eval/region
 
@@ -71,7 +65,8 @@
      :desc "Terminal"            :n  "t" #'+term/open-popup
      :desc "Terminal in project" :n  "T" #'+term/open-popup-in-project
      :desc "Org Capture"         :n  "o" #'org-capture
-     :desc "imenu"               :n  "m" #'counsel-imenu)
+     :desc "imenu"               :n  "m" #'counsel-imenu
+     :desc "Projectile Ag"       :n  "f" #'projectile-ag)
 
    (:desc "orgmode" :prefix "O"
      :desc "Capture item"        :n  "O" #'org-capture

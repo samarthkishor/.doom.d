@@ -12,7 +12,6 @@
 
 (setq doom-font (font-spec :family "Fira Code" :size 14))
 (setq doom-big-font (font-spec :family "Fira Code" :size 16))
-(setq doom-theme 'doom-nord)
 (global-visual-line-mode 1)
 
 
@@ -29,7 +28,12 @@
                '(ns-transparent-titlebar . t))
   (add-to-list 'default-frame-alist
                '(ns-appearance . dark))
-  (add-hook 'window-setup-hook #'toggle-frame-maximized))
+  (add-hook 'window-setup-hook #'toggle-frame-maximized)
+
+  ;; Set the theme according to system Dark Mode settings
+  (if (string-equal (shell-command-to-string "defaults read -g AppleInterfaceStyle") "Dark\n")
+      (setq doom-theme 'doom-nord)
+    (setq doom-theme 'doom-solarized-light)))
 
 
 ;;

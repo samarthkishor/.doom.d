@@ -287,7 +287,14 @@
                        (zero-or-more "\n" (any " ") (one-or-more not-newline)))
               line-end))
     :modes (text-mode markdown-mode gfm-mode org-mode))
-  (add-to-list 'flycheck-checkers 'proselint))
+  (add-to-list 'flycheck-checkers 'proselint)
+
+  (setq flycheck-check-syntax-automatically '(mode-enabled save)))
+
+
+(after! magit-todos
+  :config
+  (setq magit-todos-exclude-globs t))
 
 
 ;; Load external files

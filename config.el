@@ -118,6 +118,11 @@
   ;; use sly instead of slime for lisp in org-babel
   (setq org-babel-lisp-eval-fn "sly-eval"))
 
+
+(after! projectile
+  (add-to-list 'projectile-globally-ignored-directories "dist"))
+
+
 (after! tex
   (add-to-list 'safe-local-variable-values
                '(TeX-command-extra-options . "-shell-escape")))
@@ -135,10 +140,11 @@
         (if (string-match (car my-pair) buffer-file-name)
             (funcall (cdr my-pair)))))
 
-  (add-hook 'js2-mode-hook 'prettier-js-mode)
+  ;; (add-hook 'js2-mode-hook 'prettier-js-mode)
+
   (add-hook 'web-mode-hook (lambda ()
                              (enable-minor-mode
-                              '("\\.jsx?\\'" . prettier-js-mode)))))
+                              '("\\.jsx\\'" . prettier-js-mode)))))
 
 
 (def-package! evil-surround

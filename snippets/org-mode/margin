@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: margin
+# key:
+# --
+
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}

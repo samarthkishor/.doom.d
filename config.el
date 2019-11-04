@@ -189,8 +189,21 @@
   (setq company-idle-delay 1))
 
 
+;; Disable hard line wrapping
+(auto-fill-mode -1)
+
+
+;; Center the cursor
+;; Source: https://two-wrongs.com/centered-cursor-mode-in-vanilla-emacs.html
+(setq scroll-preserve-screen-position t
+      scroll-conservatively 0
+      maximum-scroll-margin 0.5
+      scroll-margin 99999)
+
+
 (after! smartparens
   (sp-use-paredit-bindings)
+  (setq sp-escape-quotes-after-insert t)
   (defun my-create-newline-and-enter-sexp (&rest _ignored)
     "Open a new brace or bracket expression, with relevant newlines and indent. "
     (newline)

@@ -3,6 +3,8 @@
 
 (package! impatient-mode)
 (package! prettier-js)
+(package! sml-mode)
+(package! company-sml :recipe (:host github :repo "nverno/company-sml"))
 
 ;;; Examples:
 ;; (package! some-package)

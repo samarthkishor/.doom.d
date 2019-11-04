@@ -147,6 +147,11 @@
                               '("\\.jsx\\'" . prettier-js-mode)))))
 
 
+(def-package! company-sml
+  :config
+  (add-hook 'company-sml 'company-sml-setup))
+
+
 (def-package! evil-surround
   :config
   (global-evil-surround-mode 1)

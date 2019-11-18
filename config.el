@@ -132,7 +132,7 @@
   (setq python-shell-interpreter "ipython"))
 
 
-(def-package! prettier-js
+(use-package! prettier-js
   :config
   (defun enable-minor-mode (my-pair)
     "Enable minor mode if filename match the regexp.  MY-PAIR is a cons cell (regexp . minor-mode)."
@@ -147,12 +147,12 @@
                               '("\\.jsx\\'" . prettier-js-mode)))))
 
 
-(def-package! company-sml
+(use-package! company-sml
   :config
   (add-hook 'company-sml 'company-sml-setup))
 
 
-(def-package! evil-surround
+(use-package! evil-surround
   :config
   (global-evil-surround-mode 1)
   (add-hook 'c++-mode-hook (lambda ()
@@ -178,7 +178,7 @@
   (add-hook 'org-mode-hook (define-and-bind-quoted-text-object "equals" "=" "=" "=")))
 
 
-;; (def-package! writegood-mode
+;; (use-package! writegood-mode
 ;;   :hook ((markdown-mode . writegood-mode)
 ;;          (tex-mode . writegood-mode)
 ;;          (text-mode . writegood-mode)

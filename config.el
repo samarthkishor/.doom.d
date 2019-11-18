@@ -132,6 +132,10 @@
   (setq python-shell-interpreter "ipython"))
 
 
+(use-package! prolog-mode
+  :mode ("\\.pl\\'" . prolog-mode))
+
+
 (use-package! prettier-js
   :config
   (defun enable-minor-mode (my-pair)
